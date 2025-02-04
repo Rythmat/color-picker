@@ -1,15 +1,23 @@
+import { useState } from 'react'
 import ColorButton from './ColorButton.jsx'
-import PickedColor from './PickedColor'
+import PickedColor from './PickedColor.jsx'
+
 
 const App = () => {
+  const [selectedColor, colorSelect] = useState('');
+  
+  
   return (
     <>
-      <h1>Color Picker</h1>
-      <ColorButton color="Blue"/>
       
-      <ColorButton color="Yellow"/>
+      <PickedColor selectedColor={selectedColor}/>
+      <h1>Color Picker</h1>
+      <ColorButton color="Blue" colorSelect={colorSelect}/>
+      
+      <ColorButton color="Yellow" colorSelect={colorSelect}/>
 
-      <ColorButton color="Green"/>
+      <ColorButton color="Green" colorSelect={colorSelect}/>
+      
     </>
   )
 }
